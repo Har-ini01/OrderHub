@@ -90,14 +90,13 @@ Shopkeepers can switch between token-based queue mode and walk-in mode depending
 
 ---
 
-## Tech Stack
+## Tech stack
 
-* React Native
-* Expo
-* TypeScript
-* Firebase Authentication
-* Cloud Firestore
-* Android
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
 ---
 
