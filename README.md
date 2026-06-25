@@ -1,50 +1,140 @@
-# Welcome to your Expo app 👋
+# OrderHub 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile-first campus food ordering and real-time queue management platform built with React Native and Firebase.
 
-## Get started
+> Developed using the Stanford Design Thinking Framework — Empathize → Define → Ideate → Prototype → Test
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## The Problem
 
-2. Start the app
+Campus food outlets often rely on a manual workflow where students must walk to a notice board, collect a printed bill, hand it to the shopkeeper, and wait at the counter without knowing when their order will be ready. During short academic breaks, this process leads to long queues, wasted time, and missed meals.
 
-   ```bash
-   npx expo start
-   ```
+OrderHub digitizes the entire experience by enabling students to place orders remotely, track their position in a live queue, and collect food using a QR-based e-bill.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Screenshots
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+<div align="center">
+  <img src="screenshots/login.jpeg" width="160" alt="Login"/>
+  <img src="screenshots/home.jpeg" width="160" alt="Home"/>
+  <img src="screenshots/menu.jpeg" width="160" alt="Menu"/>
+  <img src="screenshots/cart.jpeg" width="160" alt="Cart"/>
+  <br/><br/>
+  <img src="screenshots/queue.jpeg" width="160" alt="Queue"/>
+  <img src="screenshots/vendor-dashboard.jpeg" width="160" alt="Vendor Dashboard"/>
+  <img src="screenshots/admin-dashboard.jpeg" width="160" alt="Admin Dashboard"/>
+</div>
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## Design Thinking Process
 
-```bash
-npm run reset-project
+### Empathize
+
+Observed students spending a significant portion of their break time waiting in food queues and interacting with a paper-based ordering system.
+
+### Define
+
+Students lacked visibility into order status and estimated waiting time, while food outlets struggled to manage queues efficiently during peak hours.
+
+### Ideate
+
+Designed a mobile-first ordering platform with digital billing, live queue tracking, QR-based order verification, and role-specific management portals.
+
+### Prototype
+
+Built a cross-platform mobile application using React Native and Firebase with dedicated interfaces for students, shopkeepers, and administrators.
+
+### Test
+
+Validated the workflow through iterative testing and refined the ordering, queue tracking, and order collection experience.
+
+---
+---
+
+## What It Does
+
+OrderHub provides three dedicated portals on a single platform.
+
+| Role              | Capabilities                                                                                                                                                            |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Student**       | Browse menus across multiple campus outlets, place orders remotely, receive QR-based e-bills, track live queue position and estimated wait time, and view order history |
+| **Shopkeeper**    | Manage incoming orders, update order status, verify collections through QR scanning, and control queue availability                                                     |
+| **Administrator** | Monitor revenue, manage menus and stock, and oversee queue operations across all outlets                                                                                |
+
+---
+
+## Key Features
+
+### Role-Based Access Control
+
+Firebase Authentication combined with Firestore role validation ensures secure access. Users can only access features associated with their assigned role.
+
+### Real-Time Queue Tracking
+
+Firestore listeners provide live updates on queue position, orders ahead, estimated waiting time, and order status.
+
+### QR Code Verification
+
+Each order generates a unique QR code linked to a specific outlet. QR codes become invalid after successful collection, preventing duplicate usage.
+
+### Automatic Stock Management
+
+Inventory is updated immediately when orders are placed. Out-of-stock items are automatically hidden from ordering.
+
+### Digital Queue Management
+
+Shopkeepers can switch between token-based queue mode and walk-in mode depending on crowd levels.
+
+---
+
+## Tech Stack
+
+* React Native
+* Expo
+* TypeScript
+* Firebase Authentication
+* Cloud Firestore
+* Android
+
+---
+
+## Project Structure
+
+```text
+OrderHub/
+├── app/
+├── assets/
+├── components/
+├── constants/
+├── firebase/
+├── hooks/
+├── navigation/
+├── screens/
+├── screenshots/
+├── utils/
+├── app.json
+├── package.json
+└── tsconfig.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Installation
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+git clone https://github.com/Har-ini01/OrderHub.git
+cd OrderHub
+npm install
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Configure Firebase credentials and add the required `google-services.json` file before running the application.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## License
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is intended for educational and portfolio purposes.
